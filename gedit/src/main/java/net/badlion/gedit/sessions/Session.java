@@ -278,7 +278,7 @@ public class Session implements Cloneable {
 		boolean above = false;
 
 		if (this.blockStates.isEmpty()) {
-			//Gberry.broadcastMessage("Debug: BlockStates are empty");
+			Gberry.broadcastMessage("Debug: BlockStates are empty");
 			return;
 		}
 		Long start = System.currentTimeMillis();
@@ -328,7 +328,7 @@ public class Session implements Cloneable {
 	public void pasteHollow(Location relativeLocation, Player player) {
 		boolean above = false;
 		if (this.blockStates.isEmpty()) {
-			//Gberry.broadcastMessage("Debug: BlockStates are empty");
+			Gberry.broadcastMessage("Debug: BlockStates are empty");
 			return;
 		}
 		Long start = System.currentTimeMillis();
