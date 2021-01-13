@@ -31,7 +31,7 @@ public class SaveCommand implements CommandExecutor {
             player.sendMessage(ChatColor.RED + "Unable to save schematic to file.");
             e.printStackTrace();
         }
-        //SessionManager.getSession(player).save(args[0]);
+        SessionManager.getSession(player).save(args[0]);
 
         return true;
     }
