@@ -87,7 +87,7 @@ public class GCheat extends JavaPlugin implements Listener {
         this.getServer().getPluginManager().registerEvents(new SwingListener(), this);
         this.getServer().getPluginManager().registerEvents(new BlockGlitchListener(), this);
         this.getServer().getPluginManager().registerEvents(new ReducedKnockbackListener(), this);
-        //this.getServer().getPluginManager().registerEvents(new NoFallListener(), this);
+        this.getServer().getPluginManager().registerEvents(new NoFallListener(), this);
 
         BungeeCordListener bungeeCordListener = new BungeeCordListener();
         this.getServer().getMessenger().registerIncomingPluginChannel(this, "BungeeCord", bungeeCordListener);
@@ -129,10 +129,10 @@ public class GCheat extends JavaPlugin implements Listener {
                 return;
             }
 
-            //if (event.getLevel().ordinal() >= GCheatEvent.Level.ADMIN.ordinal()) {
-            //} else if (event.getLevel().ordinal() >= GCheatEvent.Level.MOD.ordinal()) {
-            //    Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "mc " + event.getMsg());
-            //}
+            if (event.getLevel().ordinal() >= GCheatEvent.Level.ADMIN.ordinal()) {
+            } else if (event.getLevel().ordinal() >= GCheatEvent.Level.MOD.ordinal()) {
+                Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "mc " + event.getMsg());
+            }
 
             // Automatic Ban handler
             this.handleAutomaticBans(event);
