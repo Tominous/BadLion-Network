@@ -96,12 +96,12 @@ public class AutoClickerListener implements Listener {
 
         // Been 20 ticks, check
         if (lastTickCheck + 20 <= currentTick) {
-            /*if (hitsSinceLastCheck >= AutoClickerListener.INSTA_BAN) {
+            if (hitsSinceLastCheck >= AutoClickerListener.INSTA_BAN) {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "ban " + player.getName() + " [GCheat] Autoclicker");
                 Bukkit.getPluginManager().callEvent(new GCheatEvent(player, GCheatEvent.Type.AUTO_CLICKER, GCheatEvent.Level.MOD, player.getName() + " is using Autoclicker Type " + type + " VL[" + hitsSinceLastCheck + "]"));
             } if (hitsSinceLastCheck >= AutoClickerListener.CPS_BAN_THIS_NIGGER) {
                 Bukkit.getPluginManager().callEvent(new GCheatEvent(player, GCheatEvent.Type.AUTO_CLICKER, GCheatEvent.Level.MOD, player.getName() + " is using Autoclicker Type " + type + " VL[" + hitsSinceLastCheck + "]"));
-            } */if (hitsSinceLastCheck >= AutoClickerListener.CPS_VERY_INVALID) {
+            } if (hitsSinceLastCheck >= AutoClickerListener.CPS_VERY_INVALID) {
                 Bukkit.getPluginManager().callEvent(new GCheatEvent(player, GCheatEvent.Type.AUTO_CLICKER, GCheatEvent.Level.ADMIN, player.getName() + " is using Autoclicker Type " + type + " VL[" + hitsSinceLastCheck + "]"));
             } else if (hitsSinceLastCheck >= AutoClickerListener.CPS_INVALID) {
                 Bukkit.getPluginManager().callEvent(new GCheatEvent(player, GCheatEvent.Type.AUTO_CLICKER, GCheatEvent.Level.ADMIN, player.getName() + " is using Autoclicker Type " + type + " VL[" + hitsSinceLastCheck + "]"));
@@ -177,9 +177,9 @@ public class AutoClickerListener implements Listener {
                     return;
                 }
 
-                //if (lvl > 100) {
-                //    GCheat.handleTimeDetection(AutoClickerListener.highDetectionTimes, event.getPlayer().getUniqueId(), event.getPlayer().getName(), 50000, 2, " [GCheat] Autoclicker.");
-                //}
+                if (lvl > 100) {
+                    GCheat.handleTimeDetection(AutoClickerListener.highDetectionTimes, event.getPlayer().getUniqueId(), event.getPlayer().getName(), 50000, 2, " [GCheat] Autoclicker.");
+                }
 
                 if (lvl > 40) {
                     GCheat.handleTimeDetection(AutoClickerListener.fastDetectionTimes, event.getPlayer().getUniqueId(), event.getPlayer().getName(), 10000, 5, " [GCheat] Unfair Advantage");
