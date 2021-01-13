@@ -97,9 +97,9 @@ public class MovementListener implements Listener {
                 }
             }
 
-            //if (event.getLevel() == GCheatEvent.Level.ADMIN) {
-            //    return;
-            //}
+            if (event.getLevel() == GCheatEvent.Level.ADMIN) {
+                return;
+            }
 
             GCheat.handleTimeDetection(MovementListener.lastHoverHack, event.getPlayer().getUniqueId(), event.getPlayer().getName(), 300000, 5);
         }
