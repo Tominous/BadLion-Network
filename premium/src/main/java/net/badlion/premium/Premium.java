@@ -203,10 +203,10 @@ public class Premium extends JavaPlugin {
 			String currency = args[5];
 
 			// NOTE: We have to parse their date time or we have 5k players with extra ranks -.-
-			DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yy HH:mm").withZone(DateTimeZone.UTC);
+			DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss").withZone(DateTimeZone.GMT);
 			DateTime timestamp = DateTime.parse(args[10] + " " + args[11], formatter);
 
-			//DateTime timestamp = new DateTime(DateTimeZone.UTC);
+			DateTime timestamp = new DateTime(DateTimeZone.GMT);
 			String email = args[6];
 			String ip = args[7];
 			int packageId = Integer.valueOf(args[8]);
@@ -335,23 +335,23 @@ public class Premium extends JavaPlugin {
 
 		// TEMP: Not sure if we wanna do this yet
 		// Check if they earned a perma rank or had one before
-//		final String lifeTimeRank = PurchaseUtil.checkLifetimeRanks(uuid);
-//		if (lifeTimeRank != null) {
-//			// If they don't have the perm permission give it to them
-//			final String permission = "badlion." + lifeTimeRank + "perm";
-//			final boolean givePermission = !GPermissions.getInstance().hasUserPermissionOffline(uuid.toString(), permission);
-//
-//			new BukkitRunnable() {
-//				public void run() {
-//					getServer().dispatchCommand(Bukkit.getConsoleSender(), "user " + uuid.toString() + " setgroup " + lifeTimeRank);
-//					if (givePermission) {
-//						getServer().dispatchCommand(Bukkit.getConsoleSender(), "user " + uuid.toString() + " addperm " + permission);
-//					}
-//				}
-//			}.runTask(Premium.this);
-//
-//			return;
-//		}
+		final String lifeTimeRank = PurchaseUtil.checkLifetimeRanks(uuid);
+		if (lifeTimeRank != null) {
+			// If they don't have the perm permission give it to them
+			final String permission = "badlion." + lifeTimeRank + "perm";
+			final boolean givePermission = !GPermissions.getInstance().hasUserPermissionOffline(uuid.toString(), permission);
+
+			new BukkitRunnable() {
+				public void run() {
+					getServer().dispatchCommand(Bukkit.getConsoleSender(), "user " + uuid.toString() + " setgroup " + lifeTimeRank);
+					if (givePermission) {
+						getServer().dispatchCommand(Bukkit.getConsoleSender(), "user " + uuid.toString() + " addperm " + permission);
+					}
+				}
+			}.runTask(Premium.this);
+
+			return;
+		}
 
 		// Temp lifetime rank system
 		if (GPermissions.getInstance().hasUserPermissionOffline(uuid.toString(), "badlion.lionperm")) {
@@ -479,10 +479,10 @@ public class Premium extends JavaPlugin {
 		String currency = args[9];
 
 		// NOTE: We have to parse their date time or we have 5k players with extra ranks -.-
-		DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yy HH:mm").withZone(DateTimeZone.UTC);
+		DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss").withZone(DateTimeZone.GMT);
 		DateTime timestamp = DateTime.parse(args[14] + " " + args[15], formatter);
 
-		//DateTime timestamp = new DateTime(DateTimeZone.UTC);
+		DateTime timestamp = new DateTime(DateTimeZone.GMT);
 		String email = args[10];
 		String ip = args[11];
 		int packageId = Integer.valueOf(args[12]);
@@ -635,10 +635,10 @@ public class Premium extends JavaPlugin {
 		String currency = args[5];
 
 		// NOTE: We have to parse their date time or we have 5k players with extra ranks -.-
-		DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yy HH:mm").withZone(DateTimeZone.UTC);
+		DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss").withZone(DateTimeZone.GMT);
 		DateTime timestamp = DateTime.parse(args[10] + " " + args[11], formatter);
 
-		//DateTime timestamp = new DateTime(DateTimeZone.UTC);
+		DateTime timestamp = new DateTime(DateTimeZone.GMT);
 		String email = args[6];
 		String ip = args[7];
 		int packageId = Integer.valueOf(args[8]);
