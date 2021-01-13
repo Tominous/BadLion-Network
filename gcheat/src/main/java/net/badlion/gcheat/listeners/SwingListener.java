@@ -46,7 +46,7 @@ public class SwingListener implements Listener {
 				}
 			}
 		} else {
-			//throw new IllegalStateException("GCheat swing tracker null for player " + event.getPlayer().getName());
+			throw new IllegalStateException("GCheat swing tracker null for player " + event.getPlayer().getName());
 		}
 	}
 
@@ -57,7 +57,7 @@ public class SwingListener implements Listener {
 				&& (event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK)) {
 			swingTracker.addSwing();
 
-			//this.hitTimes.put(event.getPlayer().getUniqueId(), System.currentTimeMillis());
+			this.hitTimes.put(event.getPlayer().getUniqueId(), System.currentTimeMillis());
 		}
 	}
 
@@ -67,11 +67,11 @@ public class SwingListener implements Listener {
 		if (swingTracker != null && this.isUsingSword(event.getPlayer())) {
 			swingTracker.addHit();
 
-			/*Long time = this.hitTimes.remove(event.getPlayer().getUniqueId());
+			Long time = this.hitTimes.remove(event.getPlayer().getUniqueId());
 			if (System.currentTimeMillis() > time + 10) {
 				event.getPlayer().sendMessage("ADDING CUSTOM HIT");
 				swingTracker.addSwing();
-			}*/
+			}
 		}
 
 		// do "random" bans while attacking for some things
