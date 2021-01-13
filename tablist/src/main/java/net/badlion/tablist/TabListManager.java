@@ -58,9 +58,9 @@ public class TabListManager implements Listener {
 		this.plugin.getServer().getPluginManager().registerEvents(this, this.plugin);
 
 		// Create Gberry logging tag
-        //Gberry.loggingTags.add("TabList");
-        //Gberry.loggingTags.add("TabList2");
-        //Gberry.loggingTags.add("TabList3");
+        Gberry.loggingTags.add("TabList");
+        Gberry.loggingTags.add("TabList2");
+        Gberry.loggingTags.add("TabList3");
 
 		// Initialize all of our lists
 		this.fillBlankStrings();
@@ -309,7 +309,7 @@ public class TabListManager implements Listener {
 		int counter = 0;
 		StringBuilder sb = new StringBuilder("");
 		while (counter < 80) {
-			//System.out.println(counter + ": " + sb.toString());
+			System.out.println(counter + ": " + sb.toString());
 
             if (counter < 10) {
 			    this.teamNames.add("\\u00010" + counter);
